@@ -35,7 +35,7 @@ export async function postData(formData: FormData) {
         useTLS: true,
     });
 
-    await pusher.trigger('chat', 'hello', {
+    await pusher.trigger('chat', 'hello', { // await nélkül nem várja meg a lambda function megáll mielőtt elérnél a trigger-t
         message: `${JSON.stringify(data)}\n\n`
     })
 }

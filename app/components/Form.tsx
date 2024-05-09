@@ -20,6 +20,7 @@ export default function Form() {
           type="text"
           name="message"
           placeholder="Type..."
+          required
           className="flex-grow py-2 px-4 outline-none"
         />
         <button
