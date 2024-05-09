@@ -34,15 +34,27 @@ export function NavLogin() {
 
 export function MainLogin() {
   return (
-    <button
-      onClick={() => {
-        signIn("github");
-      }}
-      className="w-full flex items-center justify-center gap-2 rounded-lg bg-teal-500 px-8 py-3 
+    <div>
+      <button
+        onClick={() => {
+          signIn("github");
+        }}
+        className="w-full flex items-center justify-center gap-2 rounded-lg bg-teal-500 px-8 py-3 
         text-center text-sm font-semibold text-white ring-teal-300 
         transition duration-100 hover:bg-teal-600 md:text-base"
-    >
-      Login to continue
-    </button>
+      >
+        Login with github
+      </button>
+      <button
+        onClick={() => {
+          signIn("google");
+        }}
+        className="mt-4 w-full flex items-center justify-center gap-2 rounded-lg bg-teal-500 px-8 py-3 
+      text-center text-sm font-semibold text-white ring-teal-300 
+      transition duration-100 hover:bg-teal-600 md:text-base"
+      >
+        Login with google
+      </button>
+    </div>
   );
 }
