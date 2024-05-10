@@ -5,7 +5,6 @@ import React from "react";
 
 export default async function ProfilePage() {
   const session = await getSession();
-  console.log(session);
 
   return (
     <div className="flex  flex-col items-center justify-center mt-32">

@@ -25,6 +25,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await getServerSession(authOptions);
+  console.log(session);
 
   return (
     <html lang="en">
@@ -39,15 +40,14 @@ export default async function RootLayout({
               <div className="flex items-center">
                 <ProfileButton />
 
-                <a href="/profile">
-                  <Image
-                    src={session.user?.image as string}
-                    alt="user image"
-                    className="w-12 h-12 rounded-full mr-3"
-                    width={50}
-                    height={50}
-                  />
-                </a>
+                <Image
+                  src={session.user?.image as string}
+                  alt="user image"
+                  className="w-12 h-12 rounded-full mr-3"
+                  width={50}
+                  height={50}
+                />
+
                 <Logout />
               </div>
             )}
