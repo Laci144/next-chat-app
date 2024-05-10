@@ -27,23 +27,6 @@ async function getData() {
   return data;
 }
 
-async function updateData() {
-  try {
-    const user = await prisma.user.findFirst({
-      where: { name: "Business Laci" },
-    });
-    console.log(user?.email, user?.id);
-    if (user) {
-      await prisma.user.updateMany({
-        where: { id: user.id },
-        data: { name: "Updated value" },
-      });
-    }
-  } catch (error) {
-    console.error("Error updating user: ", error);
-  }
-}
-
 export const dynamic = "force-dynamic"; // disable cache-ing
 
 export default async function ChatHomePage() {
@@ -57,9 +40,7 @@ export default async function ChatHomePage() {
   return (
     <div className="h-screen bg-gray-200 flex flex-col">
       <ChatComponent data={data} />
-      <button onClick={updateData} className="bg-black">
-        Update
-      </button>
+
       <Form />
     </div>
   );
