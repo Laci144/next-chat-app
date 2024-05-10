@@ -1,11 +1,10 @@
 import { getServerSession } from "next-auth";
-import React, { useEffect } from "react";
+import React from "react";
 import { authOptions } from "../lib/auth";
 import { redirect } from "next/navigation";
 import Form from "../components/Form";
 import prisma from "../lib/db";
 import ChatComponent from "../components/Chat";
-import { UpdateButton } from "../components/Buttons";
 
 async function getData() {
   const data = await prisma.message.findMany({
