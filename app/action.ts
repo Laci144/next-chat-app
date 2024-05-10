@@ -12,6 +12,7 @@ export async function postData(formData: FormData) {
     const session = await getServerSession(authOptions);
     const userMessage = formData.get('message');
 
+    console.log("post-ban");
     const data = await prisma.message.create({
         data: {
             message: userMessage as string,
