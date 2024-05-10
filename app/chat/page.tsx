@@ -57,6 +57,9 @@ export default async function ChatHomePage() {
   return (
     <div className="h-screen bg-gray-200 flex flex-col">
       <ChatComponent data={data} />
+      <button onClick={() => updateData()} className="bg-black">
+        Update
+      </button>
       <Form />
     </div>
   );
