@@ -5,7 +5,12 @@ import { NextAuthProvider } from "./components/Providers";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./lib/auth";
 import Image from "next/image";
-import { Logout, NavLogin } from "./components/Buttons";
+import {
+  Logout,
+  NavLogin,
+  ProfileButton,
+  UpdateButton,
+} from "./components/Buttons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,20 +31,23 @@ export default async function RootLayout({
       <body className={inter.className}>
         <NextAuthProvider>
           <nav className="flex px-10  py-5 justify-between fixed top-0 left-0 w-full bg-white">
-            <h1 className="text-black text-3xl font-bold">
+            <a href="/" className="text-black text-3xl font-bold">
               Ch <span className="text-teal-500">Anita</span>
-            </h1>
+            </a>
 
             {session && (
               <div className="flex items-center">
-                <Image
-                  src={session.user?.image as string}
-                  alt="user image"
-                  className="w-12 h-12 rounded-full mr-3"
-                  width={50}
-                  height={50}
-                />
+                <ProfileButton />
 
+                <a href="/profile">
+                  <Image
+                    src={session.user?.image as string}
+                    alt="user image"
+                    className="w-12 h-12 rounded-full mr-3"
+                    width={50}
+                    height={50}
+                  />
+                </a>
                 <Logout />
               </div>
             )}

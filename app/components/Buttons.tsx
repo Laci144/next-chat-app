@@ -1,6 +1,26 @@
 "use client";
-
 import { signIn, signOut } from "next-auth/react";
+import { updateData } from "../action";
+
+export function ProfileButton() {
+  return (
+    <a href="/profile" className="text-black text-3xl font-bold mr-4">
+      Profile
+    </a>
+  );
+}
+
+export function UpdateButton(oldName: string, newName: string) {
+  return (
+    <button
+      onClick={() => {
+        updateData(oldName, newName);
+      }}
+    >
+      Change my name
+    </button>
+  );
+}
 
 export function Logout() {
   return (
