@@ -2,9 +2,9 @@ import { getServerSession } from "next-auth";
 import React from "react";
 import { authOptions } from "../lib/auth";
 import { redirect } from "next/navigation";
-import Form from "../components/Form";
 import prisma from "../lib/db";
 import ChatComponent from "../components/Chat";
+import FormChat from "../components/FormChat";
 
 async function getData() {
   const data = await prisma.message.findMany({
@@ -40,7 +40,7 @@ export default async function ChatHomePage() {
   return (
     <div className="h-screen bg-gray-200 flex flex-col">
       <ChatComponent data={data} />
-      <Form />
+      <FormChat />
     </div>
   );
 }

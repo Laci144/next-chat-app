@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { postData } from "../action";
 
-export default function Form() {
+export default function FormChat() {
   const formRef = useRef<HTMLFormElement>(null);
 
   return (
