@@ -10,18 +10,6 @@ export function ProfileButton() {
   );
 }
 
-export function UpdateButton(oldName: string, newName: string) {
-  return (
-    <button
-      onClick={() => {
-        updateData(oldName, newName);
-      }}
-    >
-      Change my name
-    </button>
-  );
-}
-
 export function Logout() {
   return (
     <button
