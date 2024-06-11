@@ -5,12 +5,7 @@ import { NextAuthProvider } from "./components/Providers";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./lib/auth";
 import Image from "next/image";
-import {
-  Logout,
-  NavLogin,
-  ProfileButton,
-  UpdateButton,
-} from "./components/Buttons";
+import { Logout, NavLogin, ProfileButton } from "./components/Buttons";
 
 const inter = Inter({ subsets: ["latin"] });
 
